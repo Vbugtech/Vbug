@@ -13,45 +13,45 @@
     <div class="title">📌 Vbug - Project Registration Form</div>
     <div class="content">
       <!-- Registration form -->
-      <form action="#">
+      <form name="submit-to-google-sheet">
         <div class="user-details">
           <!-- Input for Full Name -->
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your Name" required>
+            <input type="text" id="name" name="name" placeholder="Enter your Name" required>
           </div>
           
           <!-- Input for Email -->
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="email" placeholder="Enter your email" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
           </div>
           <!-- Input for Phone Number -->
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="number" placeholder="Enter your Whatsapp number" required>
+            <input type="number" id="number" name="number" placeholder="Enter your Whatsapp number" required>
           </div>
           
         <div class="input-box">
           <span class="details">Website</span>
-          <input type="text" placeholder="Website Link (optional)">
+          <input type="text" id="website" name="website" placeholder="Website Link (optional)">
         </div>
         <div class="input-box">
           <span class="details">Area of Domain</span>
-          <input type="text" placeholder="Enter your Domain">
+          <input type="text" id="domain" name="domain" placeholder="Enter your Domain">
         </div>
         <div class="input-box">
           <span class="details">Project Details</span>
-          <input type="text" placeholder="Explain the project">
+          <input type="text" id="details" name="details" placeholder="Explain the project">
         </div>
         
       </div>
-      <div class="gender-details">
+<div class="gender-details">
         <!-- Radio buttons for gender selection -->
-        <input type="radio" name="gender" id="dot-1">
-        <input type="radio" name="gender" id="dot-2">
-        <input type="radio" name="gender" id="dot-3">
-        <input type="radio" name="gender" id="dot-4">
+        <input type="radio" name="from" id="dot-1" value="Website">
+        <input type="radio" name="from" id="dot-2" value="Linkedin">
+        <input type="radio" name="from" id="dot-3" value="Social Media">
+        <input type="radio" name="from" id="dot-4" value="Friends">
         <span class="gender-title">How did you hear about us</span>
         <div class="category">
           <!-- Label for Male -->
@@ -76,11 +76,39 @@
         </div>
       </div>
         <!-- Submit button -->
-        <div class="button">
-          <input type="submit" value="Submit">
-        </div>
+    <div class="button">
+        <input type="submit" value="Submit">
+    </div>
+       
       </form>
+<p id="success"></p>
+
     </div>
   </div>
+<script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzNoDuIzm-UPZWnXu8cRaX38UzZqD54deN19a2WDVLz75zDqJQzNlIZZehtrfYYk2n6/exec'
+
+        const form = document.forms['submit-to-google-sheet']
+        const success = document.getElementById('success');
+form.addEventListener('submit', e => {
+        e.preventDefault(); // Prevent default form submission behavior
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => response.json())
+        .then(data => {
+            success.innerHTML = "Data successfully submitted!";
+            
+            setTimeout(() => {
+                success.innerHTML = "";
+            }, 5000);
+            
+            form.reset(); // Reset form after submission
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            success.innerHTML = "Submission failed. Please try again!";
+        });
+    });
+</script>
+
 </body>
-</html>
