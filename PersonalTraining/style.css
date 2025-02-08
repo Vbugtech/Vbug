@@ -172,3 +172,7 @@ form .button input:hover {
     flex-direction: column;
   }
 }
+#success {
+  color: green;
+  margin-top: 15px;
+}
