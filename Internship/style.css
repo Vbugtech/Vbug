@@ -9,7 +9,7 @@
 }
 
 body {
-  height: 120vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,12 +108,23 @@ form .category label .dot {
 
 #dot-1:checked~.category label .one,
 #dot-2:checked~.category label .two,
-#dot-3:checked~.category label .three,
-#dot-4:checked~.category label .four {
+#dot-3:checked~.category label .three {
   background: #9b59b6;
   border-color: #d9d9d9;
 }
 
+#dot1:checked~.category label .one,
+#dot2:checked~.category label .two,
+#dot3:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+#dot4:checked~.category label .one,
+#dot5:checked~.category label .two,
+#dot6:checked~.category label .three {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
 form input[type="radio"] {
   display: none;
 }
@@ -171,4 +182,83 @@ form .button input:hover {
   .container .content .category {
     flex-direction: column;
   }
+}
+.input-box select {
+    width: 100%; /* Makes input boxes take full width */
+    height: 40px; /* Adjust height for consistency */
+    padding: 8px;
+    border: 1px solid #dcd7d7;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+.education-options {
+  display: flex;
+  gap: 20px; /* Adjusts the space between each option */
+  align-items: center;
+}
+
+.education-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between checkbox and text */
+}
+.duration-options {
+  display: flex;
+  gap: 20px; /* Adjusts space between each option */
+  align-items: center;
+}
+
+.duration-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Space between checkbox and text */
+}
+/* Style for Duration Section */
+.duration-details {
+    margin-top: 20px;
+}
+
+/* Title styling */
+.duration-title {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Duration options container */
+.duration-details .category {
+    display: flex;
+    gap: 20px; /* Space between each option */
+    align-items: center;
+}
+
+/* Hide default radio button */
+.duration-details input[type="radio"] {
+    display: none;
+}
+
+/* Custom radio button style */
+.duration-details label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Custom circular selection dot */
+.duration-details .dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid #333; /* Border color */
+    display: inline-block;
+    margin-right: 8px;
+    position: relative;
+}
+
+/* When radio is selected, show filled dot */
+.duration-details input[type="radio"]:checked + label .dot {
+    background-color: #333; /* Filled color */
 }
