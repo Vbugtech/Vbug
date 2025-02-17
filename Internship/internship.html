@@ -1,111 +1,223 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Online Learning Registration </title>
-  <link rel="shortcut icon" type="image/icon" href="favicon.png"/>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Registration Form</title>
+    <link rel="stylesheet" href="style .css">
 </head>
 <body>
-  <div class="container">
-    <!-- Title section -->
-    <div class="title">📌 Vbug - Project Registration Form</div>
-    <div class="content">
-      <!-- Registration form -->
-      <form action="#">
-        <div class="user-details">
-          <!-- Input for Full Name -->
-          <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your Name" required>
-          </div>
-          
-          <!-- Input for Email -->
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="email" placeholder="Enter your email" required>
-          </div>
-          <!-- Input for Phone Number -->
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="number" placeholder="Enter your Whatsapp number" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Date of Birth</span>
-            <input type="date" placeholder="Enter your DOB" required>
-          </div>
-        </div>
-        <div class="gender-details">
-          <!-- Radio buttons for gender selection -->
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          
-          <span class="gender-title">Organization</span>
-          <div class="category">
-            <!-- Label for Male -->
-            <label for="dot-1">
-              <span class="dot one"></span>
-              <span class="gender">College</span>
-            </label>
-            <!-- Label for Female -->
-            <label for="dot-2">
-              <span class="dot two"></span>
-              <span class="gender">Company</span>
-            </label>
-            <!-- Label for Prefer not to say -->
+    <div class="container">
+        <div class="title">Internship Registration Form</div>
+        <div class="content">
+            <form id="submit-internship-form">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text"type="text" name="name" id="name"  placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email Address</span>
+                        <input  type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Phone Number</span>
+                        <input type="tel" name="phone" id="phone" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Date of Birth</span>
+                        <input type="date" name="dob" id="dob" required>
+                    </div>
+                </div>
+
+                <div class="gender-details">
+                  <!-- Radio buttons for gender selection -->
+                  <input type="radio" name="gender" id="dot-1" value="male" >
+                  <input type="radio" name="gender" id="dot-2" value="female">
+                  <input type="radio" name="gender" id="dot-3" value="others">
+                  <span class="gender-title">Gender</span>
+                  <div class="category">
+                    <!-- Label for Male -->
+                    <label for="dot-1">
+                      <span class="dot one"></span>
+                      <span class="gender">Male</span>
+                    </label>
+                    <!-- Label for Female -->
+                    <label for="dot-2">
+                      <span class="dot two"></span>
+                      <span class="gender">Female</span>
+                    </label>
+                    <!-- Label for Prefer not to say -->
+                    <label for="dot-3">
+                      <span class="dot three"></span>
+                      <span class="gender">Prefer not to say</span>
+                    </label>
+                  </div>
+                </div>
+              <div class="education-details">
+                <span class="education-title">Education </span>
+                <div class="gender-details">
+                  <!-- Radio buttons for gender selection -->
+                  <input type="radio" name="education" id="dot4" value="UG">
+                  <input type="radio" name="education" id="dot5" value="PG"> 
+                  <input type="radio" name="education" id="dot6" value="Diploma">
+                  
+                  <div class="category">
+                    <!-- Label for Male -->
+                    <label for="dot4">
+                      <span class="dot one"></span>
+                      <span class="gender">Undergraduate</span>
+                    </label>
+                    <!-- Label for Female -->
+                    <label for="dot5">
+                      <span class="dot two"></span>
+                      <span class="gender">Postgraduate</span>
+                    </label>
+                    <!-- Label for Prefer not to say -->
+                    <label for="dot6">
+                      <span class="dot three"></span>
+                      <span class="gender">Diploma</span>
+                    </label>
+                  </div>
+              </div>
+              
+
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">College/University Name</span>
+                        <input type="text" name="college" id="college" placeholder="Enter your college name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Field of Study</span>
+                        <input type="text" name="field" id="field" placeholder="Enter your field" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Graduation Year</span>
+                        <input type="text" name="graduation_year" placeholder="Enter your graduation year" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details" class="intern">Internship Role</span>
+                        <select name="role" required>
+                            <option value="">Select an Internship Role</option>
+                            <option value="Software Engineer Intern">Software Engineer Intern</option>
+                            <option value="Data Analyst Intern">Data Analyst Intern</option>
+                            <option value="Marketing Intern">Marketing Intern</option>
+                            <option value="Graphic Designer Intern">Graphic Designer Intern</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Preferred Date</span>
+                        <input type="date" name="preferred_date" required>
+                    </div>
+                </div>
+                <div class="duration-details">
+                  <span class="duration-title">Duration</span>
+              
+                  <div class="gender-details">
+                    <!-- Radio buttons for gender selection -->
+                    <input type="radio" name="duration" id="dot1" value="1 Month">
+                    <input type="radio" name="duration" id="dot2" value="3 Months"> 
+                    <input type="radio" name="duration" id="dot3" value="6 Months">
+                    
+                    <div class="category">
+                      <!-- Label for Male -->
+                      <label for="dot1">
+                        <span class="dot one"></span>
+                        <span class="gender">1 Month</span>
+                      </label>
+                      <!-- Label for Female -->
+                      <label for="dot2">
+                        <span class="dot two"></span>
+                        <span class="gender">3 Months</span>
+                      </label>
+                      <!-- Label for Prefer not to say -->
+                      <label for="dot3">
+                        <span class="dot three"></span>
+                        <span class="gender">6 Months</span>
+                      </label>
+                    </div>
+              </div>
+              <div class="input-box">
+                <span class="details">Upload Resume</span>
+                <input type="file" name="media" id="media" accept=".pdf" required>
+            </div>
             
-          </div>
+              
+              </div>
+              
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
         </div>
-        <div class="user-details">
-        <div class="input-box">
-          <span class="details">Website</span>
-          <input type="text" placeholder="Website Link (optional)">
-        </div>
-        <div class="input-box">
-          <span class="details">Area of Domain</span>
-          <input type="text" placeholder="Enter your Domain">
-        </div>
-        <div class="input-box">
-          <span class="details">Project Details</span>
-          <input type="text" placeholder="Explain the project">
-        </div>
-        
-      </div>
-      <div class="gender-details">
-        <!-- Radio buttons for gender selection -->
-        <input type="radio" name="gender" id="dot-1">
-        <input type="radio" name="gender" id="dot-2">
-        <input type="radio" name="gender" id="dot-3">
-        <span class="gender-title">How did you hear about us</span>
-        <div class="category">
-          <!-- Label for Male -->
-          <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Website</span>
-          </label>
-          <!-- Label for Female -->
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Linkedin</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Social Media</span>
-          </label>
-          <!-- Label for Prefer not to say -->
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Friends</span>
-          </label>
-        </div>
-      </div>
-        <!-- Submit button -->
-        <div class="button">
-          <input type="submit" value="Submit">
-        </div>
-      </form>
     </div>
-  </div>
+
+</div>
+</form>
+</div>
+</div>
+
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzXiHVj_gCe5Y_kErlNVm9YQfhl4vAFxrS4L0peEw8vS44lEJzb-tTOnPFhzOFuF7jn/exec";
+    const form = document.getElementById("submit-internship-form");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        // Handle file upload
+        const resumeFile = document.getElementById("media");
+        if (resumeFile.files.length > 0) {
+            const file = resumeFile.files[0];
+            const reader = new FileReader();
+
+            // Size validation (only files < 2MB allowed)
+            if (file.size > 1024 * 1024 * 2) {
+                swal("Error", "File size should be less than 2MB.", "error");
+                return;
+            }
+
+            reader.onload = async function () {
+                formData.append("media", reader.result.split(",")[1]); // Append base64 data
+                await submitForm(formData);
+            };
+
+            reader.readAsDataURL(file);
+        } else {
+            // No file uploaded
+            await submitForm(formData);
+        }
+    });
+
+    async function submitForm(formData) {
+        // Select input submit instead of button
+        const submitButton = document.querySelector("input[type='submit']");
+        submitButton.disabled = true;
+        submitButton.value = "Loading...";
+
+        // Submit the form data to the Google Sheet
+        fetch(scriptURL, { method: "POST", body: formData })
+            .then((response) => {
+                swal("Done", "Submitted Successfully.", "success");
+                form.reset();
+            })
+            .catch((error) => {
+                swal("Error", "Something went wrong. Please try again!", "error");
+            })
+            .finally(() => {
+                // Reset the submit button back to "Register"
+                submitButton.disabled = false;
+                submitButton.value = "Register";
+            });
+    }
+</script>
 </body>
 </html>
