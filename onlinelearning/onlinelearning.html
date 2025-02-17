@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Online Learning Registration </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+
   <link rel="shortcut icon" type="image/icon" href="favicon.png"/>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -90,8 +96,9 @@
 <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbztYif3RVipmCB2X4-XMI2yIsgSB_rf4fRvq4s4lwBN2L--NJlYqA40XElTWEt3HsQMIA/exec'
 
-        const form = document.forms['submit-to-google-sheet']
-        form.addEventListener("submit", async (e) => {
+  const form = document.forms["submit-to-google-sheet"];
+
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
 
