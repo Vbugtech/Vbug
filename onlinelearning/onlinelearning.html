@@ -85,33 +85,44 @@
           <input type="submit" value="Submit">
         </div>
       </form>
-<p id="success"></p>
     </div>
   </div>
 <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbztYif3RVipmCB2X4-XMI2yIsgSB_rf4fRvq4s4lwBN2L--NJlYqA40XElTWEt3HsQMIA/exec'
 
         const form = document.forms['submit-to-google-sheet']
-        const success = document.getElementById('success');
-form.addEventListener('submit', e => {
-        e.preventDefault(); // Prevent default form submission behavior
+        form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => response.json())
-        .then(data => {
-            success.innerHTML = "Data successfully submitted!";
-            
-            setTimeout(() => {
-                success.innerHTML = "";
-            }, 5000);
-            
-            form.reset(); // Reset form after submission
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            success.innerHTML = "Submission failed. Please try again!";
-        });
+        await submitForm(formData);
     });
+
+    async function submitForm(formData) {
+        const submitButton = document.querySelector("input[type='submit']");
+        submitButton.disabled = true;
+        submitButton.value = "Loading...";
+
+        // Submit the form data to the Google Sheet
+        fetch(scriptURL, { method: "POST", body: formData })
+            .then((response) => {
+                if (response.ok) {
+                    swal("Done", "Submitted Successfully.", "success");
+                    form.reset();
+                } else {
+                    throw new Error("Network response was not ok");
+                }
+            })
+            .catch((error) => {
+                console.error("Error!", error.message);
+                swal("Error", "Something went wrong. Please try again!", "error");
+            })
+            .finally(() => {
+                // Reset the submit button back to "Register"
+                submitButton.disabled = false;
+                submitButton.value = "Register";
+            });
+    }
 </script>
 </body>
 </html>
